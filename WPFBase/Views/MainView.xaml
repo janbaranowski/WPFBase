@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="WPFBase.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFBase.Views"
+             xmlns:ViewModel="clr-namespace:WPFBase.ViewModels"
+             mc:Ignorable="d" 
+             >
+    <UserControl.DataContext>
+        <ViewModel:MainViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Text="Podstawa"
+            Grid.Row="0"
+            Grid.Column="0"/>
+        <TextBox
+            Text="{Binding Podstawa}"
+            Grid.Row="0"
+            Grid.Column="1"/>
+        <TextBlock
+            Text="Wykładnik"
+            Grid.Row="1"
+            Grid.Column="0"/>
+        <TextBox
+            Text="{Binding Wykladnik}"
+            Grid.Row="1"
+            Grid.Column="1"/>
+        <TextBlock
+            Text="Wynik"
+            Grid.Row="2"
+            Grid.Column="0"/>
+        <TextBlock
+            Text="{Binding Wynik}"
+            Grid.Row="2"
+            Grid.Column="1"/>
+        <Button
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            Grid.Column="1"
+            Command="{Binding CalculateCommand}"/>
+    </Grid>
+</UserControl>
